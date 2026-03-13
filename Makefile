@@ -1,10 +1,19 @@
-# recompile and run
-all:
-	cd output/
-	rm -rf main
-	clang src/main.c -o output/main -std=c17
-	./output/main
+# Executable name
+TARGET = app
 
-# run without recompiling
+# Define compiler
+OS := $(shell uname -s)
+ifeq ($(OS),Darwin)
+	CC = clang
+else
+	CC = gcc
+endif
+
+# Recompile and run
+all:
+	$(CC) src/main.c -lm -o $(TARGET) -std=c17
+	./$(TARGET)
+
+# Run without recompiling
 run:
-	./output/main
+	./$(TARGET)
