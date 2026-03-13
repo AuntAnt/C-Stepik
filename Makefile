@@ -5,6 +5,6 @@ all:
 	clang src/main.c -o output/main -std=c17
 	./output/main
 
-# run withput recompiling
+# run without recompiling
 run:
 	./output/main
