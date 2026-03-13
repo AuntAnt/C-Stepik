@@ -11,9 +11,9 @@ endif
 
 # Recompile and run
 all:
-	$(CC) src/main.c -lm -o $(TARGET) -std=c17
-	./$(TARGET)
+	$(CC) src/main.c -lm -o bin/$(TARGET) -std=c17
+	./bin/$(TARGET)
 
 # Run without recompiling
 run:
-	./$(TARGET)
+	./bin/$(TARGET)
